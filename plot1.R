@@ -14,8 +14,8 @@ household_data <- read.table(file = pipe('grep "^[1-2]/2/2007" "household_power_
 household_data_names <- read.table(file = pipe('head -1 "household_power_consumption.txt"'), sep=";", header = T)
 names(household_data) <- names(household_data_names)
 
-# Date type conversion
-household_data$Date<-as.Date(household_data$Date, "%d/%m/%Y")
+# New data field
+household_data$FullDate <- strptime(paste(household_data$Date,household_data$Time), "%d/%m/%Y %H:%M:%S")
 
 # Plotting procedure
 png("plot1.png", width=480, height=480)
