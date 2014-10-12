@@ -1,5 +1,5 @@
 
-# Download the file to the working directory
+# Download the file to the working directory 
 download.file("https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip", "download.zip", method = "curl")
 
 # Unzip the downloaded file; now there is a file called "household_power_consumption.txt" in the working directory
